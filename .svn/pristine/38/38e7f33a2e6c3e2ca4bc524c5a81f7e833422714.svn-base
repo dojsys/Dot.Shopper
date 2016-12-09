@@ -1,0 +1,37 @@
+﻿<div class="container">
+    <div class="jumbotron">
+        <div class="container body-content">
+            <h1 class="display-3">Dashboard</h1>
+            <p class="lead">{{$ctrl.app_description}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="home-page">
+    <div class="container page">
+        <!-- Splash banner that only shows when not logged in -->
+        <blockquote class="blockquote" show-authed="false">
+            <p class="m-b-0"> {{ $ctrl.title }}</p>
+        </blockquote>
+
+        <div class="row">
+            <!-- Main view - contains tabs & article list -->
+            <div class="col-md">
+                <p>
+                    The quick brown fox jump over the lazy dog near the bank of the river. The quick brown fox jump over the lazy dog near the bank of the river.
+                </p>
+            </div>
+
+            <!-- Sidebar where popular tags are listed -->
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <p>Links</p>
+                    <button show-authed="true" class="btn btn-outline-danger"
+                            ng-click="$ctrl.logout()">
+                       logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿export class HomeController 
+{
+
+    /*@ngInject;*/
+    constructor($scope, $state, AppConstants, UserService) 
+    {
+        this.$scope = $scope;
+        this.$state = $state;
+        this.appName = AppConstants.appName;
+        this.UserService = UserService;
+
+        this.title = "The home of Gifted developers... ";
+        this.app_description = "Angular Seeder with ES6, JSPM...";
+        
+        if (!UserService.current) {
+            UserService.ensureAuthIs(true);
+        }
+
+        this.logout = UserService.logout.bind(UserService);
+    }
+}

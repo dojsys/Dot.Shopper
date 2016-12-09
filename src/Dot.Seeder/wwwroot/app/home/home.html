@@ -1,0 +1,33 @@
+﻿<div class="container">
+    <div class="jumbotron">
+        <div class="container body-content">
+            <h1 class="display-3">{{$ctrl.title}}</h1>
+            <p class="lead">{{$ctrl.app_description}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="home-page">
+    <div class="container page">
+        <!-- Splash banner that only shows when not logged in -->
+        <blockquote class="blockquote" show-authed="false">
+            <p class="m-b-0"> {{ $ctrl.title2 }}</p>
+        </blockquote>
+
+        <div class="row">
+            <!-- Sidebar where popular tags are listed -->
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <p show-authed="false">Menu</p>
+
+                    <p show-authed="true">Your Order</p>
+                </div>
+            </div>
+
+            <!-- Main view - contains tabs & article list -->
+            <div class="col-md">
+                <p>Choose your favorite pizza!</p>
+            </div>
+        </div>
+    </div>
+</div>

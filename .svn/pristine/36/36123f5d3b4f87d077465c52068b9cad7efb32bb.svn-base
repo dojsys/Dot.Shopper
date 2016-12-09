@@ -1,0 +1,55 @@
+﻿npm install jspm --save-dev
+jspm init
+jspm update
+jspm inspect
+
+
+
+
+
+npm install -g live-server
+
+jspm install jquery
+jspm install underscore
+jspm install bootstrap=github:twbs/bootstrap@4.0.0-alpha.5
+
+jspm install angular
+jspm install angular-material
+jspm install angular-ui-router
+
+jspm install css
+jspm install npm:clean-css --dev
+jspm install font-awesome
+
+
+
+
+
+jspm install npm:bower
+jspm install npm:jsonp
+
+
+
+jspm install angular-ui-router -o "{ 'shim': { 'dist/angular-ui-router': ['angular'] }, 'dependencies': { 'angular': '^1.5.9' } }"
+
+
+
+
+
+
+
+
+
+
+
+bundling:
+jspm bundle-sfx app/main --minify  --skip-source-maps
+
+https://github.com/systemjs/plugin-css
+
+
+build from the source:
+
+npm install --global gulp
+npm run setup
+npm run build

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/" />
+    <link href="css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <ui-view></ui-view>
+
+    <!--DEV-->
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+        System.import('main.js');
+    </script>
+    <!--DEV-->
+
+    <!--Production
+    <script src="app.min.js"></script>
+    Production-->
+</body>
+</html>
