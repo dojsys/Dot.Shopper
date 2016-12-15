@@ -2,7 +2,7 @@
 {
 
     /*@ngInject;*/
-    constructor($scope, $state, AppConstants, UserService) 
+    constructor($scope, $state, AppConstants, UserService, CategoryService) 
     {
         this.$scope = $scope;
         this.$state = $state;
@@ -12,5 +12,7 @@
         this.title = "Daddy's";
         this.title2 = "The place of the best pizza....";
         this.app_description = "Browse the menu of your favorite pizza...";    
+
+        this.categoryNodes = CategoryService.getCategories();
     }
 }
