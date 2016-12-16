@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="jumbotron">
+        <div class="container body-content">
+            <h1 class="display-3">{{$ctrl.title}}</h1>
+            <p class="lead">{{$ctrl.app_description}}</p>
+        </div>
+    </div>
+</div>
+<div class="home-page">
+    <div class="container page">
+        <div class="row">
+            <div class="col-md-4">
+                <img width="318" height="230" ng-src="{{ $ctrl.pizza.Image }}" alt="pizza boy">
+            </div>
+            <div class="col-md">   
+                <h4 class="card-title">{{ $ctrl.order.Pizza.Name }}</h4>
+                <h5 class="card-title">PHP {{ $ctrl.order.Pizza.Price | number:2 }}</h5>
+                <p class="card-text">{{ $ctrl.order.Pizza.Description }}</p>
+                <div class="input-group" style="margin-bottom: 15px;">
+                    <input type="number" min="1" max="100" placeholder="Quantity" style="width: 200px; margin-right: 10px;" ng-model="$ctrl.order.Quantity" ng-change="$ctrl.UpdateTotal()">
+                    <button class="btn btn-outline-primary" type="button" ng-click="$ctrl.AddToCart(item)">Add To Cart</button>
+                </div>
+                <p><b>Total:</b> {{ $ctrl.order.Total | number:2 }}</p>
+                <p><b>Toppings:</b></p>
+            </div>
+            <div class="col-md">
+                <h4>Toppings:</h4>
+                <ul class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action" ng-repeat="top in $ctrl.toppings" ng-click="$ctrl.AddRemoveTopping(top)"
+                       ng-class="$ctrl.AddActive(top)">
+                        <h5 class="list-group-item-heading">{{ top.Name }}</h5>
+                        <p class="list-group-item-text">PHP {{ top.Price | number:2 }}</p>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

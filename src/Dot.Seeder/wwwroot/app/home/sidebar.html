@@ -1,0 +1,29 @@
+<div class="sidebar">
+    <div class="menu_div">
+        <p class="menu_title text-center" show-authed="false">Menu</p>
+    </div>
+    <ul ng-repeat="x in $ctrlSide.categoryNodes.Nodes">
+        <li>
+            <div class="">
+                <p class="title">
+                    {{x.Name}}
+                    <p>
+            </div>
+            <ul>
+                <li ng-repeat="y in x.Nodes">
+                    <div ng-click="$ctrlSide.OnSelectChange(x.Id, y.Id, $ctrl)" class="choices">
+                        <div class="div_chev">
+                            <i ng-show="$ctrlSide.selectedCategory[x.Id] == y.Id" class="fa fa-chevron-right"></i>
+                        </div>
+                        <div class="div_name">
+                            <p>{{y.Name}}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+
+    <p show-authed="false">Your Order <span class="tag tag-default">{{ cartItems }}</span></p>
+</div>

@@ -3,21 +3,28 @@
     padding-bottom: 20px;
 }
 
+
 /* Wrapping element */
+
+
 /* Set some basic padding to keep content from hitting the edges */
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
+
 /* buttons and links extension to use brackets: [ click me ] */
+
 .btn-bracketed::before {
-    display:inline-block;
+    display: inline-block;
     content: "[";
     padding-right: 0.5em;
 }
+
 .btn-bracketed::after {
-    display:inline-block;
+    display: inline-block;
     content: "]";
     padding-left: 0.5em;
 }
@@ -25,53 +32,58 @@
 
 /* Sticky footer styles
 -------------------------------------------------- */
+
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
+
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: #f5f5f5;
 }
 
-.footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
+.footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
 }
-
-
-
-
-
-
 
 
 /* Custom page CSS
 -------------------------------------------------- */
 
 .wrapper {
-  display: flex;
-  flex-flow: row wrap;
+    display: flex;
+    flex-flow: row wrap;
 }
 
+
 /* We tell all items to be 100% width */
-.header, .main, .nav, .aside, .footer {
-  flex: 1 100%;
+
+.header,
+.main,
+.nav,
+.aside,
+.footer {
+    flex: 1 100%;
 }
 
 .main {
-  padding-right: 15px;
-  padding-left: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
+
 
 /* We rely on source order for mobile-first approach
  * in this case:
@@ -82,75 +94,158 @@ body {
  * 5. footer
  */
 
+
 /* Medium screens */
+
 @media all and (min-width: 600px) {
-  /* We tell both sidebars to share a row */
-  .aside { flex: 1 auto; }
+    /* We tell both sidebars to share a row */
+    .aside {
+        flex: 1 auto;
+    }
 }
+
 
 /* Large screens */
+
 @media all and (min-width: 800px) {
-  /* We invert order of first sidebar and main
+    /* We invert order of first sidebar and main
    * And tell the main element to take twice as much width as the other two sidebars 
    */
-  .main { flex: 4 0px; }
-  .aside-1 { order: 1; }
-  .main    { order: 2; }
-  .aside-2 { order: 3; }
+    .main {
+        flex: 4 0px;
+    }
+    .aside-1 {
+        order: 1;
+    }
+    .main {
+        order: 2;
+    }
+    .aside-2 {
+        order: 3;
+    }
 }
-
 
 
 /* Create a series of empty pseudo-elements... */
-html:before,html:after,body:before,body:after{
-    content:"";
+
+html:before,
+html:after,
+body:before,
+body:after {
+    content: "";
     /*background:#dad8bb;*/
     background: #eceeef;
-    position:fixed;
+    position: fixed;
     display: flex;
-    z-index:5;
-
+    z-index: 5;
 }
+
 
 /* Border */
-html:before{
+
+html:before {
     height: 0px;
-    left:0;
-    right:0;
-    top:0;
+    left: 0;
+    right: 0;
+    top: 0;
 }
-html:after{
+
+html:after {
     width: .5rem;
-    top:0;
-    right:0;
-    bottom:0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }
-body:before{
-    height:0px;
-    right:0;
-    bottom:0;
-    left:0;
+
+body:before {
+    height: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
-body:after{
+
+body:after {
     width: .5rem;
-    top:0;
-    bottom:0;
-    left:0;
+    top: 0;
+    bottom: 0;
+    left: 0;
 }
 
 
 /* Formly */
+
 .formly-field {
-  margin-bottom: 16px;
-}
-.error-message {
-  color: #ED5565;
-  font-size: .9em;
-}
-.validation {
-  color: #a94442;
-  margin-top: -15px;
-  margin-bottom: 15px;
-  font-size: 11px;
+    margin-bottom: 16px;
 }
 
+.error-message {
+    color: #ED5565;
+    font-size: .9em;
+}
+
+.validation {
+    color: #a94442;
+    margin-top: -15px;
+    margin-bottom: 15px;
+    font-size: 11px;
+}
+
+
+/****************************************************/
+
+.sidebar {
+    padding: 5px 5px 5px 5px;
+    /*border: 1px solid #0275d8;*/
+    border-radius: 5px;
+}
+
+.sidebar .menu_div {
+    padding: 8px 8px 8px 8px;
+}
+
+.sidebar .menu_title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    margin-top: 20px;
+    padding-left: 0px;
+}
+
+.sidebar li {
+    list-style-type: none;
+}
+
+.sidebar .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0275d8;
+    text-align: center;
+}
+
+.sidebar .choices {
+    cursor: pointer;
+}
+
+.choices .div_chev {
+    display: inline-block;
+    width: 20px;
+}
+
+.choices .div_name {
+    display: inline-block;
+}
+
+.fa-chevron-right {
+    color: #0275d8;
+    margin-right: 3px;
+}
+
+.space_bottom {
+    height: 100px;
+}
+
+
+/****************************************************/

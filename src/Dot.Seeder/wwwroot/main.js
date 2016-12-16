@@ -25,10 +25,11 @@ import './app/components/index';
 import './app/auth/index';
 import './app/home/index';
 import './app/order/index';
+import './app/pizza/index';
 
 const requires = [
   'ui.router', 'templates',
-  'app.services', 'app.components', 'app.auth', 'app.layout', 'app.home', 'app.order'];
+  'app.services', 'app.components', 'app.auth', 'app.layout', 'app.home', 'app.order', 'app.pizza'];
 
 
 export default 

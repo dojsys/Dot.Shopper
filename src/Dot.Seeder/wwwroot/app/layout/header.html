@@ -7,27 +7,20 @@
             <nav class="navbar-nav">
                 <a ui-sref="app.home" class="navbar-brand"><i class="fa fa-leaf"></i> Dot.Pizza</a>
                 <a ui-sref="app.home" ui-sref-active="active" class="nav-item nav-link" ng-class="{active: $state.includes('app.home')}">Home <span class="sr-only">(current)</span></a>
-                <a ui-sref="app.order" ui-sref-active="active" class="nav-item nav-link" ng-class="{active: $state.includes('app.order')}">Your Order <span class="sr-only">(current)</span></a>
+                <a ui-sref="app.order" ui-sref-active="active" class="nav-item nav-link" ng-class="{active: $state.includes('app.order')}">Your Order <span class="sr-only">(current)</span><!--<span class="tag tag-default">{{ cartItems }}</span>--></a>
 
 
                 <!-- Show this for logged out users -->
                 <div class="float-sm-right" show-authed="false">
-                    <a class="nav-item nav-link"
-                       ui-sref="app.login"
-                       ui-sref-active="active"
-                       ng-class="{active: $state.includes('app.login')}">
+                    <a class="nav-item nav-link" ui-sref="app.login" ui-sref-active="active" ng-class="{active: $state.includes('app.login')}">
                         Sign in
                     </a>
-                    <a class="nav-item nav-link"
-                       ui-sref="app.register"
-                        ui-sref-active="active"
-                       ng-class="{active: $state.includes('app.register')}">
+                    <a class="nav-item nav-link" ui-sref="app.register" ui-sref-active="active" ng-class="{active: $state.includes('app.register')}">
                         Sign up
                     </a>
                 </div>
 
-                <button show-authed="true" class="btn btn-primary float-sm-right"
-                        ng-click="$ctrl.logout()">
+                <button show-authed="true" class="btn btn-primary float-sm-right" ng-click="$ctrl.logout()">
                     Sign out ({{$ctrl.currentUser}})
                 </button>
             </nav>
