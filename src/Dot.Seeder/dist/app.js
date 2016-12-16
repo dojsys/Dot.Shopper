@@ -24155,10 +24155,10 @@ $__System.register("15", ["16"], function (_export) {
       _export("default", angular.module("templates", []).run(["$templateCache", function ($templateCache) {
         $templateCache.put("auth/auth.html", "<div class=\"auth-page\"> <div class=\"container\"> <div class=\"row mt-3\"> <div class=\"col-xs-6 offset-xs-3\"> <h1 class=\"text-xs-center\" ng-bind=\"::$ctrl.title\"></h1> <p class=\"text-xs-center\"> <a ui-sref=\"app.login\" ng-show=\"$ctrl.authType === \'register\'\"> Have an account? </a> <a ui-sref=\"app.register\" ng-show=\"$ctrl.authType === \'login\'\"> Need an account? </a> </p> <list-errors errors=\"$ctrl.errors\"></list-errors> <form ng-submit=\"$ctrl.submitForm()\"> <fieldset ng-disabled=\"$ctrl.isSubmitting\"> <fieldset class=\"form-group\" ng-show=\"$ctrl.authType === \'register\'\"> <input class=\"form-control form-control-lg\" type=\"text\" placeholder=\"Username\" ng-model=\"$ctrl.formData.username\"> </fieldset> <fieldset class=\"form-group\"> <input class=\"form-control form-control-lg\" type=\"email\" placeholder=\"Email\" ng-model=\"$ctrl.formData.email\"> </fieldset> <fieldset class=\"form-group\"> <input class=\"form-control form-control-lg\" type=\"password\" placeholder=\"Password\" ng-model=\"$ctrl.formData.password\"> </fieldset> <button class=\"btn btn-lg btn-primary pull-xs-right\" type=\"submit\" ng-bind=\"::$ctrl.title\"></button> </fieldset> </form> </div> </div> </div> </div>");
         $templateCache.put("home/home.html", "<div class=\"container\"> <div class=\"jumbotron\"> <div class=\"container body-content\"> <h1 class=\"display-3\">{{$ctrl.title}}</h1> <p class=\"lead\">{{$ctrl.app_description}}</p> </div> </div> </div> <div class=\"home-page\"> <div class=\"container page\"> <blockquote class=\"blockquote\" show-authed=\"false\"> <p class=\"m-b-0\"> {{ $ctrl.title2 }}</p> </blockquote> <div class=\"row\"> <div class=\"col-md-3\"> <div class=\"sidebar\"> <p show-authed=\"false\">Menu</p> <p show-authed=\"true\">Your Order</p> </div> </div> <div class=\"col-md\"> <p>Choose your favorite pizza!</p> </div> </div> </div> </div>");
-        $templateCache.put("order/order.html", "<div class=\"container\"> <div class=\"jumbotron\"> <div class=\"container body-content\"> <h1 class=\"display-3\">{{$ctrl.title}}</h1> <p class=\"lead\">{{$ctrl.app_description}}</p> </div> </div> </div> <div class=\"home-page\"> <div class=\"container page\"> <div class=\"row\"> <div class=\"col-md\"> </div> </div> </div> </div>");
         $templateCache.put("layout/app.html", "<app-header></app-header> <div ui-view class=\"m-b-3\"></div> <app-footer></app-footer>");
         $templateCache.put("layout/footer.html", "<footer class=\"footer mt-3\"> <div class=\"container\"> <span class=\"text-muted\">&copy; 2016 - divstuff.com</span> </div> </footer>");
         $templateCache.put("layout/header.html", "<nav class=\"navbar navbar-fixed-top navbar-dark bg-primary\"> <div class=\"container\"> <button class=\"navbar-toggler hidden-sm-up\" type=\"button\" data-toggle=\"collapse\" data-target=\"#exCollapsingNavbar2\" aria-controls=\"exCollapsingNavbar2\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"> &#9776; </button> <div class=\"collapse navbar-toggleable-xs\" id=\"exCollapsingNavbar2\"> <nav class=\"navbar-nav\"> <a ui-sref=\"app.home\" class=\"navbar-brand\"><i class=\"fa fa-leaf\"></i> Dot.Pizza</a> <a ui-sref=\"app.home\" ui-sref-active=\"active\" class=\"nav-item nav-link\" ng-class=\"{active: $state.includes(\'app.home\')}\">Home <span class=\"sr-only\">(current)</span></a> <a ui-sref=\"app.order\" ui-sref-active=\"active\" class=\"nav-item nav-link\" ng-class=\"{active: $state.includes(\'app.order\')}\">Your Order <span class=\"sr-only\">(current)</span></a> <div class=\"float-sm-right\" show-authed=\"false\"> <a class=\"nav-item nav-link\" ui-sref=\"app.login\" ui-sref-active=\"active\" ng-class=\"{active: $state.includes(\'app.login\')}\"> Sign in </a> <a class=\"nav-item nav-link\" ui-sref=\"app.register\" ui-sref-active=\"active\" ng-class=\"{active: $state.includes(\'app.register\')}\"> Sign up </a> </div> <button show-authed=\"true\" class=\"btn btn-primary float-sm-right\" ng-click=\"$ctrl.logout()\"> Sign out ({{$ctrl.currentUser}}) </button> </nav> </div> </div> </nav>");
+        $templateCache.put("order/order.html", "<div class=\"container\"> <div class=\"jumbotron\"> <div class=\"container body-content\"> <h1 class=\"display-3\">{{$ctrl.title}}</h1> <p class=\"lead\">{{$ctrl.app_description}}</p> </div> </div> </div> <div class=\"home-page\"> <div class=\"container page\"> <div class=\"row\"> <div class=\"col-md\"> </div> </div> </div> </div>");
       }]));
     }
   };
@@ -24345,12 +24345,52 @@ $__System.register('1a', ['18', '19'], function (_export) {
     };
 });
 
-$__System.register('1b', ['16', '17', '1a'], function (_export) {
+$__System.register("1b", ["18", "19"], function (_export) {
+    var _createClass, _classCallCheck, CategoryService;
+
+    return {
+        setters: [function (_) {
+            _createClass = _["default"];
+        }, function (_2) {
+            _classCallCheck = _2["default"];
+        }],
+        execute: function () {
+            "use strict";
+
+            CategoryService = (function () {
+                function CategoryService() {
+                    _classCallCheck(this, CategoryService);
+                }
+
+                _createClass(CategoryService, [{
+                    key: "getCategories",
+                    value: function getCategories() {
+                        return {
+                            Nodes: [{
+                                Id: 0, Name: "Topping Specialties",
+                                Nodes: [{ Id: 1, Name: "Cheesy" }, { Id: 2, Name: "Vegan" }, { Id: 2, Name: "Meaty" }]
+                            }, {
+                                Id: 3, Name: "Cuisine",
+                                Nodes: [{ Id: 4, Name: "Italian" }, { Id: 5, Name: "American" }, { Id: 6, Name: "Pinoy" }]
+                            }]
+                        };
+                    }
+                }]);
+
+                return CategoryService;
+            })();
+
+            _export("default", CategoryService);
+        }
+    };
+});
+
+$__System.register('1c', ['16', '17', '1a', '1b'], function (_export) {
 
                       // Create the module where our functionality can attach to
                       'use strict';
 
-                      var angular, JWT, UserService;
+                      var angular, JWT, UserService, CategoryService;
                       return {
                                             setters: [function (_) {
                                                                   angular = _['default'];
@@ -24358,20 +24398,22 @@ $__System.register('1b', ['16', '17', '1a'], function (_export) {
                                                                   JWT = _2['default'];
                                             }, function (_a) {
                                                                   UserService = _a['default'];
+                                            }, function (_b) {
+                                                                  CategoryService = _b['default'];
                                             }],
                                             execute: function () {
-                                                                  _export('default', angular.module('app.services', []).service('JWT', JWT).service('UserService', UserService).name);
+                                                                  _export('default', angular.module('app.services', []).service('JWT', JWT).service('UserService', UserService).service('CategoryService', CategoryService).name);
                                             }
                       };
 });
 
-$__System.register("1c", ["1b"], function (_export) {
+$__System.register("1d", ["1c"], function (_export) {
   "use strict";
 
   return {
-    setters: [function (_b) {
+    setters: [function (_c) {
       var _exportObj = {};
-      _exportObj["ServiceModule"] = _b["default"];
+      _exportObj["ServiceModule"] = _c["default"];
 
       _export(_exportObj);
     }],
@@ -24379,7 +24421,7 @@ $__System.register("1c", ["1b"], function (_export) {
   };
 });
 
-$__System.register('1d', ['19'], function (_export) {
+$__System.register('1e', ['19'], function (_export) {
     var _classCallCheck, HeaderController;
 
     return {
@@ -24411,7 +24453,7 @@ $__System.register('1d', ['19'], function (_export) {
     };
 });
 
-$__System.register("1e", ["19"], function (_export) {
+$__System.register("1f", ["19"], function (_export) {
     var _classCallCheck, FooterController;
 
     return {
@@ -24434,7 +24476,7 @@ $__System.register("1e", ["19"], function (_export) {
     };
 });
 
-$__System.register('1f', [], function (_export) {
+$__System.register('20', [], function (_export) {
     'use strict';
 
     var AppHeader;
@@ -24451,7 +24493,7 @@ $__System.register('1f', [], function (_export) {
     };
 });
 
-$__System.register('20', [], function (_export) {
+$__System.register('21', [], function (_export) {
     'use strict';
 
     var AppFooter;
@@ -24468,21 +24510,21 @@ $__System.register('20', [], function (_export) {
     };
 });
 
-$__System.register('21', ['16', '20', '1d', '1e', '1f'], function (_export) {
+$__System.register('22', ['16', '20', '21', '1e', '1f'], function (_export) {
                       'use strict';
 
-                      var angular, AppFooter, HeaderController, FooterController, AppHeader;
+                      var angular, AppHeader, AppFooter, HeaderController, FooterController;
                       return {
                                             setters: [function (_) {
                                                                   angular = _['default'];
                                             }, function (_2) {
-                                                                  AppFooter = _2.AppFooter;
-                                            }, function (_d) {
-                                                                  HeaderController = _d['default'];
+                                                                  AppHeader = _2.AppHeader;
+                                            }, function (_3) {
+                                                                  AppFooter = _3.AppFooter;
                                             }, function (_e) {
-                                                                  FooterController = _e['default'];
+                                                                  HeaderController = _e['default'];
                                             }, function (_f) {
-                                                                  AppHeader = _f.AppHeader;
+                                                                  FooterController = _f['default'];
                                             }],
                                             execute: function () {
                                                                   _export('default', angular.module('app.layout', []).controller('HeaderCtrl', HeaderController).controller('FooterCtrl', FooterController).component('appHeader', AppHeader).component('appFooter', AppFooter).name);
@@ -24490,7 +24532,7 @@ $__System.register('21', ['16', '20', '1d', '1e', '1f'], function (_export) {
                       };
 });
 
-$__System.register('22', [], function (_export) {
+$__System.register('23', [], function (_export) {
     'use strict';
 
     function ShowAuthed(UserService) {
@@ -24529,7 +24571,7 @@ $__System.register('22', [], function (_export) {
     };
 });
 
-$__System.register('23', ['16', '22'], function (_export) {
+$__System.register('24', ['16', '23'], function (_export) {
                       'use strict';
 
                       var angular, ShowAuthed;
@@ -24545,7 +24587,7 @@ $__System.register('23', ['16', '22'], function (_export) {
                       };
 });
 
-$__System.register('24', [], function (_export) {
+$__System.register('25', [], function (_export) {
     'use strict';
 
     _export('AuthConfig', AuthConfig);
@@ -24582,7 +24624,7 @@ $__System.register('24', [], function (_export) {
     };
 });
 
-$__System.registerDynamic("25", [], true, function ($__require, exports, module) {
+$__System.registerDynamic("26", [], true, function ($__require, exports, module) {
   var define,
       global = this || self,
       GLOBAL = global;
@@ -24602,33 +24644,33 @@ $__System.registerDynamic("25", [], true, function ($__require, exports, module)
   };
   return module.exports;
 });
-$__System.registerDynamic('26', ['25'], true, function ($__require, exports, module) {
+$__System.registerDynamic('27', ['26'], true, function ($__require, exports, module) {
   var define,
       global = this || self,
       GLOBAL = global;
   /* */
-  var $ = $__require('25');
+  var $ = $__require('26');
   module.exports = function defineProperty(it, key, desc) {
     return $.setDesc(it, key, desc);
   };
   return module.exports;
 });
-$__System.registerDynamic("27", ["26"], true, function ($__require, exports, module) {
+$__System.registerDynamic("28", ["27"], true, function ($__require, exports, module) {
   var define,
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("26"), __esModule: true };
+  module.exports = { "default": $__require("27"), __esModule: true };
   return module.exports;
 });
-$__System.registerDynamic("18", ["27"], true, function ($__require, exports, module) {
+$__System.registerDynamic("18", ["28"], true, function ($__require, exports, module) {
   /* */
   "use strict";
 
   var define,
       global = this || self,
       GLOBAL = global;
-  var _Object$defineProperty = $__require("27")["default"];
+  var _Object$defineProperty = $__require("28")["default"];
   exports["default"] = function () {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
@@ -24648,7 +24690,7 @@ $__System.registerDynamic("18", ["27"], true, function ($__require, exports, mod
   exports.__esModule = true;
   return module.exports;
 });
-$__System.register('28', ['18', '19'], function (_export) {
+$__System.register('29', ['18', '19'], function (_export) {
     var _createClass, _classCallCheck, AuthCtrl;
 
     return {
@@ -24701,7 +24743,7 @@ $__System.register('28', ['18', '19'], function (_export) {
     };
 });
 
-$__System.register('29', ['16', '24', '28'], function (_export) {
+$__System.register('2a', ['16', '25', '29'], function (_export) {
                       'use strict';
 
                       var angular, AuthConfig, AuthCtrl;
@@ -24719,7 +24761,7 @@ $__System.register('29', ['16', '24', '28'], function (_export) {
                       };
 });
 
-$__System.register('2a', [], function (_export) {
+$__System.register('2b', [], function (_export) {
     'use strict';
 
     _export('HomeConfig', HomeConfig);
@@ -24742,7 +24784,7 @@ $__System.register('2a', [], function (_export) {
     };
 });
 
-$__System.register("2b", ["19"], function (_export) {
+$__System.register("2c", ["19"], function (_export) {
     var _classCallCheck, HomeController;
 
     return {
@@ -24755,7 +24797,7 @@ $__System.register("2b", ["19"], function (_export) {
             HomeController =
 
             /*@ngInject;*/
-            function HomeController($scope, $state, AppConstants, UserService) {
+            function HomeController($scope, $state, AppConstants, UserService, CategoryService) {
                 _classCallCheck(this, HomeController);
 
                 this.$scope = $scope;
@@ -24766,6 +24808,8 @@ $__System.register("2b", ["19"], function (_export) {
                 this.title = "Daddy's";
                 this.title2 = "The place of the best pizza....";
                 this.app_description = "Browse the menu of your favorite pizza...";
+
+                this.categoryNodes = CategoryService.getCategories();
             };
 
             _export("HomeController", HomeController);
@@ -24773,17 +24817,17 @@ $__System.register("2b", ["19"], function (_export) {
     };
 });
 
-$__System.register('2c', ['16', '2a', '2b'], function (_export) {
+$__System.register('2d', ['16', '2b', '2c'], function (_export) {
                       'use strict';
 
                       var angular, HomeConfig, HomeController;
                       return {
                                             setters: [function (_) {
                                                                   angular = _['default'];
-                                            }, function (_a) {
-                                                                  HomeConfig = _a.HomeConfig;
                                             }, function (_b) {
-                                                                  HomeController = _b.HomeController;
+                                                                  HomeConfig = _b.HomeConfig;
+                                            }, function (_c) {
+                                                                  HomeController = _c.HomeController;
                                             }],
                                             execute: function () {
                                                                   _export('default', angular.module('app.home', []).controller('HomeController', HomeController).config(HomeConfig).name);
@@ -24791,7 +24835,7 @@ $__System.register('2c', ['16', '2a', '2b'], function (_export) {
                       };
 });
 
-$__System.registerDynamic("2d", [], false, function ($__require, $__exports, $__module) {
+$__System.registerDynamic("2e", [], false, function ($__require, $__exports, $__module) {
   var _retrieveGlobal = $__System.get("@@global-helpers").prepareGlobal($__module.id, "angular", null);
 
   (function ($__global) {
@@ -56516,14 +56560,14 @@ $__System.registerDynamic("2d", [], false, function ($__require, $__exports, $__
 
   return _retrieveGlobal();
 });
-$__System.registerDynamic("16", ["2d"], true, function ($__require, exports, module) {
+$__System.registerDynamic("16", ["2e"], true, function ($__require, exports, module) {
   var define,
       global = this || self,
       GLOBAL = global;
-  module.exports = $__require("2d");
+  module.exports = $__require("2e");
   return module.exports;
 });
-$__System.register('2e', [], function (_export) {
+$__System.register('2f', [], function (_export) {
     'use strict';
 
     _export('OrderConfig', OrderConfig);
@@ -56562,7 +56606,7 @@ $__System.registerDynamic("19", [], true, function ($__require, exports, module)
   exports.__esModule = true;
   return module.exports;
 });
-$__System.register("2f", ["19"], function (_export) {
+$__System.register("30", ["19"], function (_export) {
     var _classCallCheck, OrderController;
 
     return {
@@ -56598,17 +56642,17 @@ $__System.register("2f", ["19"], function (_export) {
     };
 });
 
-$__System.register('30', ['16', '2e', '2f'], function (_export) {
+$__System.register('31', ['16', '30', '2f'], function (_export) {
                       'use strict';
 
-                      var angular, OrderConfig, OrderController;
+                      var angular, OrderController, OrderConfig;
                       return {
                                             setters: [function (_) {
                                                                   angular = _['default'];
-                                            }, function (_e) {
-                                                                  OrderConfig = _e.OrderConfig;
+                                            }, function (_2) {
+                                                                  OrderController = _2['default'];
                                             }, function (_f) {
-                                                                  OrderController = _f['default'];
+                                                                  OrderConfig = _f.OrderConfig;
                                             }],
                                             execute: function () {
                                                                   _export('default', angular.module('app.order', []).controller('OrderController', OrderController).config(OrderConfig).name);
@@ -56616,7 +56660,7 @@ $__System.register('30', ['16', '2e', '2f'], function (_export) {
                       };
 });
 
-$__System.register('1', ['3', '5', '10', '14', '15', '16', '21', '23', '29', '30', 'b', 'd', 'e', 'f', '1c', '2c'], function (_export) {
+$__System.register('1', ['3', '5', '10', '14', '15', '16', '22', '24', '31', 'b', 'd', 'e', 'f', '1d', '2a', '2d'], function (_export) {
     'use strict';
 
     // Import our app functionality
@@ -56632,9 +56676,9 @@ $__System.register('1', ['3', '5', '10', '14', '15', '16', '21', '23', '29', '30
             ConfigStateWithScope = _5.ConfigStateWithScope;
         }, function (_6) {}, function (_3) {
             angular = _3['default'];
-        }, function (_7) {}, function (_8) {}, function (_9) {}, function (_10) {}, function (_b) {}, function (_d) {}, function (_e) {}, function (_f) {}, function (_c) {
-            ServiceModule = _c.ServiceModule;
-        }, function (_c2) {}],
+        }, function (_7) {}, function (_8) {}, function (_9) {}, function (_b) {}, function (_d) {}, function (_e) {}, function (_f) {}, function (_d2) {
+            ServiceModule = _d2.ServiceModule;
+        }, function (_a) {}, function (_d3) {}],
         execute: function () {
             requires = ['ui.router', 'templates', 'app.services', 'app.components', 'app.auth', 'app.layout', 'app.home', 'app.order'];
 

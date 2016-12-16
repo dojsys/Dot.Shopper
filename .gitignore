@@ -243,3 +243,10 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+#Custom
+**/wwwroot/jspm_packages
+**/.vscode
+
+src/Dot.Seeder/dist/*
+src/Dot.Seeder/dist/*.*
